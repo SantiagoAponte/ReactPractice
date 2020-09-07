@@ -33,27 +33,26 @@ function Registry(){
 
              setRegistryData(newData)
          }
-
     return (
         <div>
             <h1>Registry</h1>
             <Link to="/">Click here to go to home</Link>
             <form onSubmit={addItem}>
-            <label>text input: 
-                <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)
+            <label>
+                <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value) } />
             </label>
                     <input type="submit" value="Submit" />
             </form>
-                {error ? <span style={{ color: "red" }}>Error occured.</span> : null}
-                {
+            {error ? <span style={{ color: "red" }}>Error occured.</span> : null}
+            {
                     registryData.map((item, index) => {
                         return (
                             <li key={index}>{item} <button onClick={() => removeItem(index)}>Remove</button> <button onClick={() => editItem(index)}>Update</button></li>
                         )
                     })
-                }
-        </div>
-    )
             }
-            
+            </div>
+    )
+    }
+}
 export default Registry;

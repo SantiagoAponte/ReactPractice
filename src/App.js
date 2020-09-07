@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 import Home from "./routes/Home"
 import Registry from "./routes/Registry"
+
 import './App.css';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Switch>
-      <Route path="/" exact>
+      <Route path="/">
       <Home />
       </Route>
       <Route path="/registry">
